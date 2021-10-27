@@ -34,7 +34,8 @@
 
 ## Web access
 
-You can access the /public and /collab directories on your web browser.
+* <https://stash.osgconnect.net/public>
+* <https://stash.osgconnect.net/collab> 
 
 ## xrootd access
 
