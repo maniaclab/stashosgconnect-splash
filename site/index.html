@@ -220,36 +220,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-information" class="md-nav__link">
-    Hardware information
+  <a href="#hardware-on-the-cephfs-cluster" class="md-nav__link">
+    Hardware on the CephFS cluster
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#software-information" class="md-nav__link">
-    Software information
+  <a href="#software-on-the-stash-server" class="md-nav__link">
+    Software on the stash server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-access" class="md-nav__link">
-    Web access
+  <a href="#web-access-via-stash" class="md-nav__link">
+    Web access via stash
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#xrootd-access" class="md-nav__link">
-    xrootd access
+  <a href="#xrootd-access-via-stash" class="md-nav__link">
+    xrootd access via stash
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stashcp-tool" class="md-nav__link">
-    stashcp tool
+  <a href="#stashcp-tool-for-copying-data" class="md-nav__link">
+    stashcp tool for copying data
   </a>
   
 </li>
@@ -295,36 +295,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-information" class="md-nav__link">
-    Hardware information
+  <a href="#hardware-on-the-cephfs-cluster" class="md-nav__link">
+    Hardware on the CephFS cluster
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#software-information" class="md-nav__link">
-    Software information
+  <a href="#software-on-the-stash-server" class="md-nav__link">
+    Software on the stash server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-access" class="md-nav__link">
-    Web access
+  <a href="#web-access-via-stash" class="md-nav__link">
+    Web access via stash
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#xrootd-access" class="md-nav__link">
-    xrootd access
+  <a href="#xrootd-access-via-stash" class="md-nav__link">
+    xrootd access via stash
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stashcp-tool" class="md-nav__link">
-    stashcp tool
+  <a href="#stashcp-tool-for-copying-data" class="md-nav__link">
+    stashcp tool for copying data
   </a>
   
 </li>
@@ -344,8 +344,8 @@
                 
                 <h1 id="stash-service-and-cephfs-cluster">Stash service and CephFS cluster</h1>
 <h2 id="introduction">Introduction</h2>
-<p>The domain stash.osgconnect.net is a web service that provides access to a CephFS cluster. The CephFS cluster has 33 nodes from three generations of purchases. </p>
-<h2 id="hardware-information">Hardware information</h2>
+<p>The purpose of the stash.osgconnect.net server is to provide access to data storage for distributed computing projects, like <a href="https://www.osgconnect.net">osgconnect</a> projects. The stash.osgconnect.net server provides access to a CephFS cluster through the web and other software.</p>
+<h2 id="hardware-on-the-cephfs-cluster">Hardware on the CephFS cluster</h2>
 <style>
     table, tr, th, td {
         border: 1px solid gray !important;
@@ -353,6 +353,7 @@
     }
 </style>
 
+<p>The CephFS cluster has 33 nodes from three generations of purchases. </p>
 <p>Generation 1 nodes</p>
 <table>
 <tr><th>Quantity</th><td>14</td></tr>
@@ -380,24 +381,23 @@
 <tr><th>Disk</th><td>2x 240GB BOSS for system, 18x 12TB 7.2k RPM HDD SAS for Ceph</td></tr>
 </table>
 
-<h2 id="software-information">Software information</h2>
+<h2 id="software-on-the-stash-server">Software on the stash server</h2>
 <ul>
 <li>nginx server </li>
 <li>xrootd server</li>
-<li>stashcp</li>
 </ul>
-<h2 id="web-access">Web access</h2>
+<h2 id="web-access-via-stash">Web access via stash</h2>
 <ul>
 <li><a href="https://stash.osgconnect.net/public">https://stash.osgconnect.net/public</a></li>
 <li><a href="https://stash.osgconnect.net/collab">https://stash.osgconnect.net/collab</a> </li>
 </ul>
-<h2 id="xrootd-access">xrootd access</h2>
+<h2 id="xrootd-access-via-stash">xrootd access via stash</h2>
 <p>You can access the Ceph cluster with xrootd. Below is an example of copying a file with xrootd.</p>
 <pre><code>xrdcp root://stash.osgconnect.net:1094//osgconnect/public/&lt;user_id&gt;/&lt;file&gt; -&gt; /tmp
 
 stashcp file_name stash://stash.osgconnect.net/
 </code></pre>
-<h2 id="stashcp-tool">stashcp tool</h2>
+<h2 id="stashcp-tool-for-copying-data">stashcp tool for copying data</h2>
 <p>You can copy files to the Ceph cluster using the stashcp tool.</p>
 <pre><code>stashcp output.dat stash:///osgconnect/public/&lt;username&gt;/output/output.dat
 </code></pre>

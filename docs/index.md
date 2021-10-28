@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The domain stash.osgconnect.net is a web service that provides access to a CephFS cluster. The CephFS cluster has 33 nodes from three generations of purchases. 
+The purpose of the stash.osgconnect.net server is to provide access to data storage for distributed computing projects, like [osgconnect](https://www.osgconnect.net) projects. The stash.osgconnect.net server provides access to a CephFS cluster through the web and other software.
 
-## Hardware information
+## Hardware on the CephFS cluster
 
 <style>
     table, tr, th, td {
@@ -12,6 +12,8 @@ The domain stash.osgconnect.net is a web service that provides access to a CephF
         border-collapse: collapse;
     }
 </style>
+
+The CephFS cluster has 33 nodes from three generations of purchases. 
 
 Generation 1 nodes
 
@@ -43,18 +45,17 @@ Generation 3 nodes
 <tr><th>Disk</th><td>2x 240GB BOSS for system, 18x 12TB 7.2k RPM HDD SAS for Ceph</td></tr>
 </table>
 
-## Software information
+## Software on the stash server
 
 * nginx server 
 * xrootd server
-* stashcp
 
-## Web access
+## Web access via stash
 
 * <https://stash.osgconnect.net/public>
 * <https://stash.osgconnect.net/collab> 
 
-## xrootd access
+## xrootd access via stash
 
 You can access the Ceph cluster with xrootd. Below is an example of copying a file with xrootd.
 
@@ -62,7 +63,7 @@ You can access the Ceph cluster with xrootd. Below is an example of copying a fi
 
     stashcp file_name stash://stash.osgconnect.net/
 
-## stashcp tool
+## stashcp tool for copying data
 
 You can copy files to the Ceph cluster using the stashcp tool.
 
