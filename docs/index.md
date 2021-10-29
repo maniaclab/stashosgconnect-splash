@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The purpose of the stash.osgconnect.net server is to provide access to data storage for distributed computing projects, like [osgconnect](https://www.osgconnect.net) projects. The stash.osgconnect.net server provides access to a CephFS cluster through the web and other software.
+The purpose of the stash.osgconnect.net server is to provide read access to the distributed filesystem (CephFS) on the [OSG Connect Infrastructure](https://opensciencegrid.org/) storage. The storage hosts project space (by default 500 GB per user) to facilitate computational research on OSG beyond what is available in their home directories. Stash allows for users to have access to a larger storage allocation and for the user to access data there from jobs running on worker nodes on OSG using the stashcp tool or xrootd.
 
 ## Hardware on the CephFS cluster
 
