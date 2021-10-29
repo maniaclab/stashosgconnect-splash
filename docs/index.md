@@ -4,26 +4,25 @@
 
 The purpose of the stash.osgconnect.net server is to provide read access to the distributed filesystem (CephFS) on the [OSG Connect Infrastructure](https://opensciencegrid.org/) storage. The storage hosts project space (by default 500 GB per user) to facilitate computational research on OSG beyond what is available in their home directories. Stash allows for users to have access to a larger storage allocation and for the user to access data there from jobs running on worker nodes on OSG using stashcp tool or xrootd. Data there can also be retrieved with the wget utility over http. In addition to delivering data to remote sites for computational workflows, users can also use a browser to download data back to their home institutions. 
 
-## How to use 
+## How to use the service
 
-# Web access via stash
+### Access your files via the web
 
 * <https://stash.osgconnect.net/public>
 * <https://stash.osgconnect.net/collab> 
 
-# xrootd access via stash
+### Access your files via XRootD tools
 
-You can access the Ceph cluster with xrootd. Below is an example of copying a file with xrootd.
+You can access your stash storage with xrootd, for example from a job running on a remote site. Below is an example of copying a file with xrootd from your stash location to your local directory, which you can insert in your execution script. For more details on execution scripts for HTCondor jobs on OSG refer to this [documentation](https://support.opensciencegrid.org/support/solutions/articles/5000633410-quickstart-submit-example-htcondor-jobs)
 
-    xrdcp root://stash.osgconnect.net:1094//osgconnect/public/<user_id>/<file> -> /tmp
+    xrdcp root://stash.osgconnect.net:1094//osgconnect/public/<user_id>/<file> . 
 
-    stashcp file_name stash://stash.osgconnect.net/
+### Access your files via the stashcp tool
 
-# stashcp tool for copying data
+Similar to the XRootD method above, you access your files via the stashcp tool, while you are running a job on a remote site on OSG. The following command will copy your file file from it's location on stash to the current directory where your job is running on the remote host
 
-You can copy files to the Ceph cluster using the stashcp tool.
-
-    stashcp output.dat stash:///osgconnect/public/<username>/output/output.dat
+    module load stashcache
+    stashcp stash:///osgconnect/public/<username>/output/output.dat . 
 
 
 ## Hardware on the CephFS cluster
