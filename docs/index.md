@@ -2,7 +2,29 @@
 
 ## Introduction
 
-The purpose of the stash.osgconnect.net server is to provide read access to the distributed filesystem (CephFS) on the [OSG Connect Infrastructure](https://opensciencegrid.org/) storage. The storage hosts project space (by default 500 GB per user) to facilitate computational research on OSG beyond what is available in their home directories. Stash allows for users to have access to a larger storage allocation and for the user to access data there from jobs running on worker nodes on OSG using the stashcp tool or xrootd.
+The purpose of the stash.osgconnect.net server is to provide read access to the distributed filesystem (CephFS) on the [OSG Connect Infrastructure](https://opensciencegrid.org/) storage. The storage hosts project space (by default 500 GB per user) to facilitate computational research on OSG beyond what is available in their home directories. Stash allows for users to have access to a larger storage allocation and for the user to access data there from jobs running on worker nodes on OSG using stashcp tool or xrootd. Data there can also be retrieved with the wget utility over http. In addition to delivering data to remote sites for computational workflows, users can also use a browser to download data back to their home institutions. 
+
+## How to use 
+
+# Web access via stash
+
+* <https://stash.osgconnect.net/public>
+* <https://stash.osgconnect.net/collab> 
+
+# xrootd access via stash
+
+You can access the Ceph cluster with xrootd. Below is an example of copying a file with xrootd.
+
+    xrdcp root://stash.osgconnect.net:1094//osgconnect/public/<user_id>/<file> -> /tmp
+
+    stashcp file_name stash://stash.osgconnect.net/
+
+# stashcp tool for copying data
+
+You can copy files to the Ceph cluster using the stashcp tool.
+
+    stashcp output.dat stash:///osgconnect/public/<username>/output/output.dat
+
 
 ## Hardware on the CephFS cluster
 
@@ -50,21 +72,3 @@ Generation 3 nodes
 * nginx server 
 * xrootd server
 
-## Web access via stash
-
-* <https://stash.osgconnect.net/public>
-* <https://stash.osgconnect.net/collab> 
-
-## xrootd access via stash
-
-You can access the Ceph cluster with xrootd. Below is an example of copying a file with xrootd.
-
-    xrdcp root://stash.osgconnect.net:1094//osgconnect/public/<user_id>/<file> -> /tmp
-
-    stashcp file_name stash://stash.osgconnect.net/
-
-## stashcp tool for copying data
-
-You can copy files to the Ceph cluster using the stashcp tool.
-
-    stashcp output.dat stash:///osgconnect/public/<username>/output/output.dat
